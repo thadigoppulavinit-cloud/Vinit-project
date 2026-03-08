@@ -1,0 +1,237 @@
+:root {
+  background: #f8fafc;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --danger: #dc2626;
+  --border: #e2e8f0;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+  /* Backward-compatible alias */
+  background: var(--background);
+}
+
+.vinit {
+  margin: 0px;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(#02036b, #030303);
+  color: var(text);
+}
+
+.app-shell {
+  width: min(1100px, 95vw);
+  margin: 2rem auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+}
+
+.notes-panel,
+.editor-panel {
+  margin-bottom: 252px;
+  background: var(panel);
+  border: 1px solid var(border);
+  border-radius: 16px;
+  box-shadow: var(shadow);
+  color: white;
+}
+
+
+.notes-panel {
+  overflow: hidden;
+}
+
+.search-wrap {
+  padding: 0.8rem;
+  border-bottom: 1px solid var(border);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+#searchInput,
+#titleInput,
+#contentInput {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  border: 0.5px solid var(border);
+  box-shadow: 0px 0px 15px -3px rgb(255, 255, 255);
+}
+
+#searchInput:hover,
+#titleInput:hover,
+#contentInput:hover{
+  transition: 1s ease;
+  transform: scale(1.02);
+}
+
+#searchInput:focus,
+#titleInput:focus,
+#contentInput:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.2);
+  border-color: var(primary);
+}
+
+.notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.note-item {
+  margin: 0;
+}
+
+.note-item-btn {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  text-align: left;
+  padding: 0.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.note-item-btn:hover {
+  background: #c6c9d4;
+}
+
+.note-item.active .note-item-btn {
+  background: #e0e7ff;
+  border-color: #bfdbfe;
+}
+
+.note-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.note-snippet {
+  margin: 0.3rem 0;
+  color: var(muted);
+  font-size: 0.9rem;
+}
+
+.note-time {
+  color: var(muted);
+  font-size: 0.8rem;
+}
+
+.editor-panel {
+  padding: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(muted);
+}
+
+.editor {
+  display: grid;
+  gap: 0.75rem;
+}
+
+#contentInput {
+  min-height: 360px;
+  resize: vertical;
+}
+
+.editor-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meta-text {
+  margin: 0;
+  color: var(muted);
+  font-size: 0.9rem;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.primary-btn,
+.danger-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(primary);
+  background-color: #00d5e4;
+}
+
+.primary-btn:hover{
+  transition: 1s ease;
+  transform: scale(1.08);
+}
+
+.danger-btn {
+  background: var(danger);
+  background-color: #5eb9c0;
+}
+
+.danger-btn:hover{
+  transition: 1s ease;
+  transform: scale(1.08);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-list {
+    max-height: 35vh;
+  }
+}
+
+/* i have did */
+
+.shade {
+  box-shadow: 0px 0px 15px 2px rgb(255, 255, 255);
+}
+
+h1 {
+  color: rgb(0, 247, 255);
+  filter: drop-shadow(1px 1px 15px rgb(255, 255, 255));
+}
+
+h1:hover{
+  transition: 2s ease;
+  transform: translate(450px);
+}
