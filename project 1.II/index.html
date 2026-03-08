@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+  <body class="vinit">
+    <main class="app-shell">
+      <header class="topbar">
+        <h1>My Daily Notes</h1>
+        <button id="newNoteButton" class="primary-btn"> New Note</button>
+      </header>
+
+      <section class="layout">
+        <aside class="notes-panel">
+          <div class="search-wrap">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search notes..."
+              aria-label="Search notes"
+            />
+          </div>
+          <ul id="notesList" class="notes-list" aria-label="Notes list"></ul>
+        </aside>
+
+        <section class="editor-panel" aria-live="polite">
+          <div id="emptyState" class="empty-state">
+            <h2>No note selected</h2>
+            <p>Create a new note to get started.</p>
+          </div>
+
+          <form id="editorForm" class="editor hidden">
+            <input
+              id="titleInput"
+              type="text"
+              placeholder="Title"
+              maxlength="100"
+              required
+            />
+            <textarea class="shade"
+              id="contentInput"
+              placeholder="Write your note here..."
+              rows="14"
+              required
+            ></textarea>
+            <div class="editor-actions">
+              <p id="metaText" class="meta-text"></p>
+              <div class="btn-group">
+                <button id="deleteButton" type="button" class="danger-btn">Delete</button>
+                <button type="submit" class="primary-btn">Save</button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <template id="noteItemTemplate">
+      <li class="note-item">
+        <button type="button" class="note-item-btn">
+          <h3 class="note-title"></h3>
+          <p class="note-snippet"></p>
+          <time class="note-time"></time>
+        </button>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
